@@ -15,7 +15,22 @@ def hello_world_args(*args):
     print(type(args)) #Para saber si args es tupla o algo mas
     print(first_name)
 
+def hello_world_keyword_args(first_person, second_person):
+    print(f"Hello , {first_person} / {second_person} !")
+
+def hello_world_arbitrary_keyword_args(**kwargs):
+    if kwargs.get['second_person'] is None :
+        print("No hay segunda persona")
+    else:
+        print(kwargs)
+        print(type(kwargs))
+        print(f"Hello, {kwargs['first_person'] / {kwargs['second_person']}} !")
 
 #hello_world()
 #hello_world_name("Yoshio")
-hello_world_args("Sebastian", "Daniel", "Vannessa")
+#hello_world_args("Sebastian", "Daniel", "Vannessa")
+#hello_world_keyword_args(first_person= "Aaron", second_person= "Carla")
+#hello_world_arbitrary_keyword_args(first_person= "Bryan", second_person="Cesar")
+#hello_world_arbitrary_keyword_args(first_person= "Daniel")
+
+
