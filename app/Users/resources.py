@@ -1,11 +1,11 @@
 from flask.views import MethodView
 from flask import Blueprint, request
 
-users_blueprint = Blueprint("users_blueprint", __name__, url_prefix='/api/')
+users_blueprint = Blueprint("categories_blueprint", __name__, url_prefix='/api/')
 
 class UsersList(MethodView):
     def get(self):
-        return {'message': "User list"}
+        return {'message': "Categories"}
 
 class User(MethodView):
     def post(self):
@@ -16,10 +16,15 @@ class User(MethodView):
             return{"message":"No has ingresado tu correo"},400
         if username is None:
             return{"message":"No has ingresado tu usuario"},400
+        return {"message": "Bienvenido!"}
         
          
 users_blueprint.add_url_rule(
     'users',
     view_func=UsersList.as_view("users_list")
 )   
-    
+
+users_blueprint.add_url_rule(
+    'users',
+    view_func=User.as_view("users")
+)
