@@ -1,0 +1,153 @@
+REQUEST 
+GET http://api.museochihuahua.gob.mx/eventos
+Accept: application/json
+
+RESPONSE
+Status code: 200 (OK)
+Content-type: application/json
+
+{
+    "eventos": [
+    {
+      "id":1,
+      "nombre": "Desfragmentando mentiras",
+      "fecha":  "13-05-23",
+      "precio": 10,
+      "lugar":  "Casa Chihuahua"
+    },
+    {
+      "id":2,
+      "nombre": "Gentrificacion",
+      "fecha":  "01-08-23",
+      "precio": "Gratis",
+      "lugar":  "Foro Rata Muerta"
+    }]
+}
+
+REQUEST
+GET http://api.museochihuahua.gob.mx/expositor-datos
+Accept: application/json
+
+RESPONSE
+Status code: 200 (OK)
+Content-type: application/json
+
+{
+    "expositor-datos": [
+    {
+      "id":1,
+      "nombre": "Yoshio Lomas Valles",
+      "numero":  6141281005,
+      "nombre-exposicion": "Desfragmentando mentiras",
+      "aprobado":  "True"
+    },
+    {
+    {
+      "id":2,
+      "nombre": "Aaron Ramirez Natividad",
+      "numero":  6147853409,
+      "nombre-exposicion": "Gentrificacion",
+      "aprobado":  "True"
+    }
+    }]
+}
+
+REQUEST
+POST http://api.museochihuahua.gob.mx/eventos
+Accept: application/json
+{
+   "nombre": "Parangaricutirimicuaro",
+   "fecha":  "03-01-2024",
+   "precio": 100,
+   "lugar":  "Centro de exposiciones"
+}
+
+RESPONSE
+Status Code: 201 (Created)
+Content-type: application/json
+
+{
+   "id": 3,
+   "nombre": "Parangaricutirimicuaro",
+   "fecha":  "03-01-2024",
+   "precio": 100,
+   "lugar":  "Centro de exposiciones"
+}
+
+REQUEST
+POST http://api.museochihuahua.gob.mx/expositor-datos
+Accept: application/json
+
+{
+   "nombre": "Armando De Jesus Dominguez",
+   "numero":  6142305671,
+   "nombre-exposicion": "Parangaricutirimicuaro",
+   "aprobado":  "False"
+}
+
+RESPONSE
+Status Code: 201 (Created)
+Content-type: application/json
+
+{
+   "id": 3,
+   "nombre": "Armando De Jesus Dominguez",
+   "numero":  6142305671,
+   "nombre-exposicion": "Parangaricutirimicuaro",
+   "aprobado":  "False"
+}
+
+REQUEST
+PUT http://api.museochihuahua.gob.mx/eventos/3
+Accept: application/json
+
+Body:
+{
+    "precio":200
+}
+
+RESPONSE
+Status Code: 201 (Created)
+Content type: application/json
+
+{
+   "id": 3,
+   "nombre": "Parangaricutirimicuaro",
+   "fecha":  "03-01-2024",
+   "precio": 200,
+   "lugar":  "Centro de exposiciones"
+}
+
+REQUEST
+PUT http://api.museochihuahua.gob.mx/expositor-datos/3
+Accept: application/json
+
+Body:
+{
+    "aprobado": "True"
+}
+
+RESPONSE
+{
+   "id": 3,
+   "nombre": "Armando De Jesus Dominguez",
+   "numero":  6142305671,
+   "nombre-exposicion": "Parangaricutirimicuaro",
+   "aprobado":  "True"
+}
+
+REQUEST
+DELETE http://api.museochihuahua.gob.mx/eventos/2
+Accept: application/json
+
+RESPONSE
+Status Code: 200 (OK)
+Content-tye: application/json
+
+REQUEST
+DELETE http://api.museochihuahua.gob.mx/expositor-datos/2
+Accept: application/json
+
+RESPONSE
+Status Code: 200 (OK)
+Content-tye: application/json
