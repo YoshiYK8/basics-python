@@ -1,3 +1,17 @@
+import random
+
+def fnHola():
+    print("Hola")
+
+def fnDado():
+    print(random.randint(1,6))
+
+def fnEZPZ():
+    print("Too EZ B)")
+
+fnHola()
+fnDado()
+fnEZPZ()
 
 def hello_world():
     print("Hello World")
@@ -32,5 +46,3 @@ def hello_world_arbitrary_keyword_args(**kwargs):
 #hello_world_keyword_args(first_person= "Aaron", second_person= "Carla")
 #hello_world_arbitrary_keyword_args(first_person= "Bryan", second_person="Cesar")
 #hello_world_arbitrary_keyword_args(first_person= "Daniel")
-
-
